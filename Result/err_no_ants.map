@@ -1,0 +1,48 @@
+Ant population : 0
+handling hashtag : ##start
+handling room start id=0 x=1 y=3 with modifier 1
+handling room room1 id=1 x=5 y=6 with modifier 0
+handling room room2 id=2 x=8 y=9 with modifier 0
+handling room room3 id=3 x=7 y=8 with modifier 0
+handling room room4 id=4 x=7 y=6 with modifier 0
+handling room room5 id=5 x=2 y=2 with modifier 0
+handling room room6 id=6 x=8 y=3 with modifier 0
+handling room room7 id=7 x=0 y=8 with modifier 0
+handling room room8 id=8 x=4 y=3 with modifier 0
+handling hashtag : ##end
+handling room end id=9 x=3 y=5 with modifier 2
+handling room room9 id=10 x=8 y=2 with modifier 0
+handling tube : room start to room room1
+handling tube : room room1 to room room2
+handling tube : room room2 to room room3
+handling tube : room room3 to room room4
+handling tube : room room4 to room room5
+handling tube : room room5 to room room6
+handling tube : room room6 to room room7
+handling tube : room room7 to room room8
+handling tube : room room8 to room room9
+handling tube : room room9 to room end
+01000000000
+10100000000
+01010000000
+00101000000
+00010100000
+00001010000
+00000101000
+00000010100
+00000001001
+00000000001
+00000000110
+start name = start
+end name = end
+Actual room name = start
+Actual room name = room1
+Actual room name = room2
+Actual room name = room3
+Actual room name = room4
+Actual room name = room5
+Actual room name = room6
+Actual room name = room7
+Actual room name = room8
+Actual room name = room9
+Actual room name = end

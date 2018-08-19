@@ -1,0 +1,132 @@
+Ant population : 100
+handling hashtag : #comment
+handling room start id=0 x=0 y=1 with modifier 0
+handling room end id=1 x=1 y=0 with modifier 0
+handling room 0 id=2 x=0 y=0 with modifier 0
+handling room 1 id=3 x=1 y=1 with modifier 0
+handling room 2 id=4 x=2 y=2 with modifier 0
+handling room 4 id=5 x=4 y=4 with modifier 0
+handling hashtag : #comment
+handling hashtag : #comment
+handling hashtag : #comment
+handling room 5 id=6 x=5 y=5 with modifier 0
+handling room 6 id=7 x=6 y=6 with modifier 0
+handling room 7 id=8 x=7 y=7 with modifier 0
+handling room 8 id=9 x=8 y=8 with modifier 0
+handling room 9 id=10 x=9 y=9 with modifier 0
+handling room 10 id=11 x=10 y=10 with modifier 0
+handling room 11 id=12 x=11 y=11 with modifier 0
+handling hashtag : ##start
+handling room 12 id=13 x=12 y=12 with modifier 1
+handling room 13 id=14 x=13 y=13 with modifier 0
+handling room 14 id=15 x=14 y=14 with modifier 0
+handling room 15 id=16 x=15 y=15 with modifier 0
+handling hashtag : ##end
+handling room 16 id=17 x=16 y=16 with modifier 2
+handling room 17 id=18 x=17 y=17 with modifier 0
+handling room 18 id=19 x=18 y=18 with modifier 0
+handling room 19 id=20 x=19 y=19 with modifier 0
+handling hashtag : #comment
+handling tube : room 0 to room 14
+handling tube : room 0 to room 12
+handling tube : room 1 to room 12
+handling tube : room 1 to room 5
+handling tube : room 1 to room 13
+handling tube : room 1 to room 19
+handling tube : room 2 to room 1
+handling tube : room 2 to room 9
+handling tube : room 2 to room 18
+handling tube : room 3 to room 4
+handling tube : room 3 to room 5
+handling tube : room 4 to room 10
+handling tube : room 4 to room 15
+handling tube : room 5 to room 15
+handling tube : room 5 to room 11
+handling tube : room 5 to room 0
+handling tube : room 5 to room 15
+handling tube : room 5 to room 18
+handling tube : room 5 to room 1
+handling tube : room 6 to room 5
+handling tube : room 6 to room 0
+handling tube : room 7 to room 8
+handling tube : room 8 to room 0
+handling tube : room 8 to room 16
+handling tube : room 8 to room 6
+handling tube : room 9 to room 18
+handling tube : room 9 to room 8
+handling tube : room 9 to room 11
+handling tube : room 10 to room 17
+handling tube : room 10 to room 13
+handling tube : room 10 to room 1
+handling tube : room 10 to room 2
+handling tube : room 10 to room 3
+handling tube : room 11 to room 15
+handling tube : room 11 to room 17
+handling tube : room 11 to room 4
+handling tube : room 11 to room 6
+handling tube : room 12 to room 2
+handling tube : room 12 to room 14
+handling tube : room 13 to room 3
+handling tube : room 14 to room 0
+handling tube : room 14 to room 10
+handling tube : room 14 to room 17
+handling tube : room 14 to room 18
+handling tube : room 14 to room 1
+handling tube : room 14 to room 6
+handling tube : room 14 to room 9
+handling tube : room 14 to room 17
+handling tube : room 15 to room 17
+handling tube : room 15 to room 10
+handling tube : room 16 to room 1
+handling tube : room 17 to room 10
+handling tube : room 18 to room 11
+handling tube : room 19 to room 11
+handling tube : room 19 to room 18
+handling tube : room start to room 8
+handling tube : room start to room 2
+handling tube : room start to room 18
+handling tube : room end to room 14
+000010000100000000010
+000000000000000100000
+000000110100010100000
+000010100001011101001
+100100000011010000010
+000000000001100010000
+001100010000100010010
+001000100100100100000
+000000000100000000000
+101000011010000001000
+000010000100100100010
+000111000000001110100
+000001110010000010111
+001110000000000100000
+000100000001000000000
+011100010011010000110
+000001100001100000100
+000100000100000000000
+000000000001100110000
+100010100010100100001
+000100000000100000010
+start name = 12
+end name = 16
+Actual room name = 12
+Actual room name = 0
+Actual room name = 5
+Actual room name = 1
+Actual room name = 2
+Actual room name = start
+Actual room name = 8
+Actual room name = 6
+Actual room name = 11
+Actual room name = 4
+Actual room name = 10
+Actual room name = 13
+Actual room name = 14
+Actual room name = end
+Actual room name = 9
+Actual room name = 18
+Actual room name = 19
+Actual room name = 17
+Actual room name = 15
+Actual room name = 7
+Actual room name = 16

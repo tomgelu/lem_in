@@ -1,0 +1,16 @@
+Ant population : 100
+handling hashtag : ##start
+handling room start id=0 x=1 y=3 with modifier 1
+handling room room1 id=1 x=5 y=6 with modifier 0
+handling hashtag : ##end
+handling room end id=2 x=3 y=5 with modifier 2
+handling tube : room start to room room1
+handling tube : room room1 to room end
+010
+101
+010
+start name = start
+end name = end
+Actual room name = start
+Actual room name = room1
+Actual room name = end
