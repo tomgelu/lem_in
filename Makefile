@@ -6,7 +6,7 @@
 #    By: tgelu <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/15 17:56:01 by tgelu             #+#    #+#              #
-#    Updated: 2018/08/19 19:08:27 by tgelu            ###   ########.fr        #
+#    Updated: 2018/09/05 14:21:32 by tgelu            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,7 @@ OBJ_PATH = ./obj
 
 SRC_NAME = main.c \
 		   parser.c \
-		   get_next_line.c \
-		   check_map.c
+		   get_next_line.c
 
 INC_NAME = lem_in.h
 LIB_NAME = libftprintf.a

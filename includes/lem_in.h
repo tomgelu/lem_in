@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 17:50:13 by tgelu             #+#    #+#             */
-/*   Updated: 2018/08/19 22:12:04 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/04 17:05:55 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct				s_room
 	int						id;
 	int						visited;
 	struct s_room			*next;
+	int						ant_nb;
 }							t_room;
 
 typedef struct				s_map

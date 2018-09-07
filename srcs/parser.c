@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 17:48:04 by tgelu             #+#    #+#             */
-/*   Updated: 2018/08/19 21:50:21 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/05 15:06:22 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int			parse_file(t_list **head)
 
 	while (get_next_line(0, &tmp) > 0)
 	{
+		if (!ft_isprint(tmp[0]))
+			return (0);
 		if (!(*head))
 			*head = ft_lstnew(tmp,
 					(ft_strlen(tmp) + 1) * sizeof(char));
@@ -74,7 +76,6 @@ int			get_tab_length(char **tab)
 
 int			handle_hashtag(t_map *map, char* str, int *modifier)
 {
-	ft_printf("handling hashtag : %s\n", str);
 	if (str[0] == '#' && str[1] == '#')
 	{
 		if (ft_strcmp(str + 2, "start") == 0)
@@ -128,7 +129,6 @@ t_room		*room_exists(t_map *map, char *name)
 
 int			connect_rooms(t_map *map, t_room *room1, t_room *room2)
 {
-	(void)map;
 	map->connections[room1->id][room2->id] = 1;
 	map->connections[room2->id][room1->id] = 1;
 	return (1);
@@ -154,7 +154,6 @@ int		handle_tube(t_map *map, char *str)
 		connect_rooms(map, room_exists(map, room1), room_exists(map, room2));
 	else
 		return (0);
-	ft_printf("handling tube : room %s to room %s\n", room1, room2);
 	return (1);
 }
 
@@ -215,6 +214,7 @@ int			handle_room(t_map *map, char *str, int *modifier, int *room_nb)
 	map->last->next = NULL;
 	map->last->name = get_room_name(str);
 	map->last->id = *room_nb;
+	map->last->ant_nb = 0;
 	if ((map->last->x = get_room_coords(str, 1)) == -1)
 		return (0);
 	if ((map->last->y = get_room_coords(str, 2)) == -1)
@@ -222,7 +222,6 @@ int			handle_room(t_map *map, char *str, int *modifier, int *room_nb)
 	if (!(is_coords_available(map, map->last->x, map->last->y, *room_nb)))
 		return (0);
 	map->last->visited = 0;
-	ft_printf("handling room %s id=%d x=%d y=%d with modifier %d\n", map->last->name, map->last->id, map->last->x, map->last->y, *modifier);
 	if (*modifier != 0)
 	{
 		if (*modifier == 1)
@@ -282,7 +281,6 @@ int			parse_map(t_map *map, t_list *head)
 	current = head;
 	if (!(parse_ant_population(map, &current)))
 		return (0);
-	ft_printf("Ant population : %d\n", map->ant_pop);
 	current = current->next;
 	while (current && count_digits((char *)current->content, "-") != 2)
 	{
@@ -318,21 +316,5 @@ int			parse_map(t_map *map, t_list *head)
 	map->room_nb = room_nb;
 	if (!map->start || !map->end)
 		return (0);
-	int	y = 0;
-	int x = 0;
-	
-	while (y < room_nb)
-	{
-		x = 0;
-		while (x < room_nb)
-		{
-			ft_printf("%d", map->connections[y][x]);
-			x++;
-		}
-		ft_printf("\n");
-		y++;
-	}
-	ft_printf("start name = %s\n", map->start->name);
-	ft_printf("end name = %s\n", map->end->name);
 	return (1);
 }
