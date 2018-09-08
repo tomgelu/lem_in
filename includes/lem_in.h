@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 17:50:13 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 16:32:26 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 17:45:05 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ int					free_hole(t_list *head, t_map *map, int *path);
 int					free_map(t_map *map);
 int					free_path(int *path);
 void				free_ants(t_ant **, int ant_nb);
+void				print_result(t_map *map, int *path, int len);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 18:51:56 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 17:32:25 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 19:08:11 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,21 @@ int					main(void)
 	head = NULL;
 	if (!(parse_file(&head)))
 		return (free_lines(head) && ft_error("Error"));
-	if (!(map = (t_map *)malloc(sizeof(t_map))))
-		return (ft_error("Error"));
+	if (!(map = (t_map *)ft_memalloc(sizeof(t_map))))
+		return (free_lines(head) && ft_error("Error"));
 	if (!(parse_map(map, head)))
 		return (free_lines(head) && free_map(map) && ft_error("Error"));
 	if (!(path = (int *)malloc((map->room_nb + 1) * sizeof(int))))
+	{
 		return (free_lines(head) && free_map(map)
-			&& free_path(path) && ft_error("Error"));
+				&& free_path(path) && ft_error("Error"));
+	}
 	ft_bzero(path, map->room_nb + 1);
 	if (!(path_len = dfs(map, map->start, &path, 0)))
+	{
 		return (free_lines(head) && free_map(map)
-			&& free_path(path) && ft_error("Error"));
-	print_header(map);
-	send_ants(map, path, path_len);
+				&& free_path(path) && ft_error("Error"));
+	}
+	print_result(map, path, path_len);
 	return (free_hole(head, map, path));
 }

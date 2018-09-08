@@ -6,11 +6,17 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:37:40 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 17:29:23 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 17:45:31 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+
+void		print_result(t_map *map, int *path, int len)
+{
+	print_header(map);
+	send_ants(map, path, len);
+}
 
 void		send_to_path(t_map *map, int *path, int path_len, t_ant *ant)
 {

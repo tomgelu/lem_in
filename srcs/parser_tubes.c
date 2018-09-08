@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:47:53 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 16:40:20 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 19:00:05 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			parse_tubes(t_map *map, t_list *current)
 		str = current->content;
 		if (count_digits(str, "-") == 2)
 			if (!(handle_tube(map, str)))
-				return (0);
+				return (-1);
 		current = current->next;
 	}
 	return (1);
@@ -36,7 +36,7 @@ int			handle_tube(t_map *map, char *str)
 
 	i = 0;
 	j = 0;
-	while (str[i] && str[i] != '-')
+	while (str && str[i] && str[i] != '-')
 		i++;
 	room1 = ft_strsub(str, 0, i);
 	i++;

@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 15:17:14 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 17:12:56 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 19:07:17 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int			free_map(t_map *map)
 	t_room	*room;
 	t_room	*next_room;
 
+	if (!map)
+		return (1);
 	room = map->rooms;
 	while (room)
 	{

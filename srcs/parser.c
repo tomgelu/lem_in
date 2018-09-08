@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 17:48:04 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 17:28:49 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 19:39:48 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int			parse_file(t_list **head)
 
 	while (get_next_line(0, &tmp) > 0)
 	{
-		if (!ft_isprint(tmp[0]))
+		if (!tmp || (!ft_isprint(tmp[0])
+				&& !(tmp[0] == '\0' || tmp[0] == '\n')))
 			return (0);
 		if (!(*head))
 			*head = ft_lstnew(tmp,
@@ -72,9 +73,9 @@ int			parse_map(t_map *map, t_list *head)
 	i = -1;
 	while (++i < map->room_nb)
 		map->connections[i] = (int *)malloc(sizeof(int) * (map->room_nb + 1));
-	if (!(parse_tubes(map, current)))
-		return (0);
 	if (!map->start || !map->end)
+		return (0);
+	if (!(parse_tubes(map, current)))
 		return (0);
 	return (1);
 }
