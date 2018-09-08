@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:47:48 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 14:47:49 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 17:26:08 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ int			connect_rooms(t_map *map, t_room *room1, t_room *room2)
 
 int			alloc_room(t_map *map, char *str, t_room *new)
 {
-	if (room_exists(map, get_room_name(str)) != NULL)
+	char	*name;
+
+	name = get_room_name(str);
+	if (room_exists(map, name) != NULL)
 		return (0);
 	if (!(map->rooms))
 	{
@@ -36,6 +39,7 @@ int			alloc_room(t_map *map, char *str, t_room *new)
 		map->last->next = new;
 		map->last = new;
 	}
+	ft_strdel(&name);
 	return (1);
 }
 
@@ -72,12 +76,12 @@ int			handle_room(t_map *map, char *str, int *modifier)
 	map->last->name = get_room_name(str);
 	map->last->id = map->room_nb;
 	map->last->ant_nb = 0;
+	map->last->visited = 0;
 	if (((map->last->x = get_room_coords(str, 1)) == -1)
 			|| ((map->last->y = get_room_coords(str, 2)) == -1))
 		return (0);
 	if (!(is_coords_available(map, map->last->x, map->last->y)))
 		return (0);
-	map->last->visited = 0;
 	if (*modifier != 0)
 	{
 		if (*modifier == 1)

@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:51:55 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 15:04:56 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 16:40:38 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,19 @@ t_ant		**alloc_and_init_ants(t_map *map)
 		i++;
 	}
 	return (ants);
+}
+
+void		free_ants(t_ant **ants, int ant_nb)
+{
+	int		i;
+
+	i = 0;
+	while (i < ant_nb)
+	{
+		if (ants[i])
+			ft_memdel((void **)&ants[i]);
+		i++;
+	}
+	if (ants)
+		ft_memdel((void **)&ants);
 }

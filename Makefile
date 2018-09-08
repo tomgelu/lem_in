@@ -6,7 +6,7 @@
 #    By: tgelu <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/15 17:56:01 by tgelu             #+#    #+#              #
-#    Updated: 2018/09/05 14:21:32 by tgelu            ###   ########.fr        #
+#    Updated: 2018/09/08 15:54:03 by tgelu            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRC_NAME = main.c \
 		   room_utils.c \
 		   get_next_line.c \
 		   utils.c \
-		   print.c 
+		   print.c \
+		   free.c
 
 INC_NAME = lem_in.h
 LIB_NAME = libftprintf.a

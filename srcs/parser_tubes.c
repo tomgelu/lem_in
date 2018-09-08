@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:47:53 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 15:05:09 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 16:40:20 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ int			handle_tube(t_map *map, char *str)
 	if (room_exists(map, room1) && room_exists(map, room2))
 		connect_rooms(map, room_exists(map, room1), room_exists(map, room2));
 	else
+	{
+		ft_strdel(&room1);
+		ft_strdel(&room2);
 		return (0);
+	}
+	ft_strdel(&room1);
+	ft_strdel(&room2);
 	return (1);
 }

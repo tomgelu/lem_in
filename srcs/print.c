@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:37:40 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 14:37:42 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 17:29:23 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void		send_ants(t_map *map, int *path, int path_len)
 		}
 		ft_printf("\n");
 	}
+	free_ants(ants, map->ant_pop);
 }
 
 void		print_rooms(t_map *map, t_room *room)
