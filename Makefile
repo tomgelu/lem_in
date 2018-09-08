@@ -25,7 +25,13 @@ OBJ_PATH = ./obj
 
 SRC_NAME = main.c \
 		   parser.c \
-		   get_next_line.c
+		   parser_room.c \
+		   parser_tubes.c \
+		   ants.c \
+		   room_utils.c \
+		   get_next_line.c \
+		   utils.c \
+		   print.c 
 
 INC_NAME = lem_in.h
 LIB_NAME = libftprintf.a
