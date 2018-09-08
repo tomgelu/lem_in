@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:53:56 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 15:05:20 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 20:24:50 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_room		*room_exists(t_map *map, char *name)
 	current = map->rooms;
 	while (current)
 	{
-		if (strcmp(name, current->name) == 0)
+		if (ft_strcmp(name, current->name) == 0)
 			return (current);
 		current = current->next;
 	}

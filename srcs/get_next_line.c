@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/06 16:53:07 by tgelu             #+#    #+#             */
-/*   Updated: 2018/06/02 20:07:27 by piliegeo         ###   ########.fr       */
+/*   Updated: 2018/09/08 20:25:33 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ t_list		*ft_get_file(int fd, t_list **file)
 			return (current);
 		current = current->next;
 	}
-	current = ft_memalloc(sizeof(t_list));
+	if (!(current = ft_memalloc(sizeof(t_list))))
+		return (NULL);
 	current->content_size = fd;
 	current->content = ft_strdup("");
 	ft_lstadd(file, current);

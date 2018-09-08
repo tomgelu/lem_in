@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:51:55 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 16:40:38 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 20:51:53 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int			parse_ant_population(t_map *map, t_list **lst)
 	char		*tmp;
 
 	i = 0;
-	while ((*lst)->content && ((char *)(*lst)->content)[0] == '#')
+	while ((*lst) && (*lst)->content && ((char *)(*lst)->content)[0] == '#')
 		*lst = (*lst)->next;
-	if (!((*lst)->content))
+	if (!(*lst) || !((*lst)->content))
 	{
 		map->ant_pop = -1;
 		return (0);
@@ -28,7 +28,7 @@ int			parse_ant_population(t_map *map, t_list **lst)
 	tmp = (char *)(*lst)->content;
 	while (tmp[i])
 	{
-		if (!ft_isdigit(tmp[i]))
+		if (tmp[i] == '\0' || !ft_isdigit(tmp[i]))
 		{
 			map->ant_pop = -1;
 			return (0);

@@ -6,7 +6,7 @@
 /*   By: tgelu <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/15 17:48:04 by tgelu             #+#    #+#             */
-/*   Updated: 2018/09/08 19:39:48 by tgelu            ###   ########.fr       */
+/*   Updated: 2018/09/08 20:34:19 by tgelu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,10 @@ int			parse_map(t_map *map, t_list *head)
 		return (0);
 	i = -1;
 	while (++i < map->room_nb)
-		map->connections[i] = (int *)malloc(sizeof(int) * (map->room_nb + 1));
-	if (!map->start || !map->end)
-		return (0);
-	if (!(parse_tubes(map, current)))
+		if (!(map->connections[i] = (int*)ft_memalloc(sizeof(int)
+			* (map->room_nb + 1))))
+			return (0);
+	if (!map->start || !map->end || !(parse_tubes(map, current)))
 		return (0);
 	return (1);
 }
